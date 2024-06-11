@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    align-items: center;
+    padding: 20px 20px; /* Reduced padding */
+    background-color: #333;
+    color: #fff;
+    width: 100%; /* Ensure it takes the full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.header-title {
+    margin: 0;
+    font-size: 2em;
+}
+
+.header-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}

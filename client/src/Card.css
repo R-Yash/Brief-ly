@@ -1,0 +1,50 @@
+.card {
+    border: 4px solid #333; /* Thicker border */
+    border-radius: 12px; /* Rounded corners */
+    padding: 24px; /* Increased padding */
+    width: 275px; /* Slightly wider */
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    background-color: #fff; /* White background */
+}
+
+.card:hover {
+    transform: translateY(-20px); /* Lift on hover */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 12px 12px 0 0; /* Rounded corners for the image */
+}
+
+.card-title {
+    margin: 16px 0 8px 0;
+    font-size: 1.5em; /* Larger font size */
+    font-weight: bold; /* Bold title */
+    color: #333; /* Darker title color */
+}
+
+.card-content {
+    font-size: 1.2em;
+    margin: 0 0 16px 0;
+    color: #666; /* Lighter content color */
+}
+
+.card-link {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.card-link img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s; /* Smooth transition for the icon */
+}
+
+.card-link:hover img {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}

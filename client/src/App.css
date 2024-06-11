@@ -1,0 +1,19 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+  margin: 0;
+}
+
+main {
+  flex: 1; /* Take up the remaining space */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}

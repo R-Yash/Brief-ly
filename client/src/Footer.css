@@ -1,0 +1,11 @@
+.footer {
+    text-align: center;
+    padding: 20px 20px; /* Reduced padding */
+    background-color: #333;
+    color: #fff;
+    width: 100%; /* Ensure it takes the full width */
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box; /* Include padding in width calculation */
+    border-radius: 12px;
+}
