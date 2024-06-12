@@ -1,9 +1,8 @@
 .header {
     display: flex;
     justify-content: space-between;
-    border-radius: 12px;
     align-items: center;
-    padding: 20px 20px; /* Reduced padding */
+    padding: 10px 20px; /* Reduced padding */
     background-color: #333;
     color: #fff;
     width: 100%; /* Ensure it takes the full width */
@@ -12,17 +11,17 @@
 
 .header-title {
     margin: 0;
-    font-size: 2em;
+    font-size: 1.85em;
 }
 
 .header-icons {
     display: flex;
-    gap: 16px;
+    gap: 20px;
 }
 
 .icon {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 }
 

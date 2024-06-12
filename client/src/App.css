@@ -1,3 +1,37 @@
+/* Light Mode */
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --header-footer-background-color: #333;
+  --header-footer-text-color: #fff;
+  --card-background-color: #fff;
+  --card-text-color: #000;
+  --card-border-color: #ccc;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --header-footer-background-color: #1f1f1f;
+  --header-footer-text-color: #e0e0e0;
+  --card-background-color: #1f1f1f;
+  --card-text-color: #e0e0e0;
+  --card-border-color: #444;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header, .footer {
+  background-color: var(--header-footer-background-color);
+  color: var(--header-footer-text-color);
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -16,4 +50,57 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
+}
+
+/* Update Card CSS */
+.card {
+  border: 2px solid var(--card-border-color); /* Use CSS variable */
+  border-radius: 12px; /* Rounded corners */
+  padding: 24px; /* Increased padding */
+  width: 250px; /* Slightly wider */
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  background-color: var(--card-background-color); /* Use CSS variable */
+  color: var(--card-text-color); /* Use CSS variable */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift on hover */
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.card-image {
+  width: 100%;
+  border-radius: 12px 12px 0 0; /* Rounded corners for the image */
+}
+
+.card-title {
+  margin: 16px 0 8px 0;
+  font-size: 1.5em; /* Larger font size */
+  font-weight: bold; /* Bold title */
+  color: var(--card-text-color); /* Use CSS variable */
+}
+
+.card-content {
+  font-size: 1em;
+  margin: 0 0 16px 0;
+  color: var(--card-text-color); /* Use CSS variable */
+}
+
+.card-link {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.card-link img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s; /* Smooth transition for the icon */
+}
+
+.card-link:hover img {
+  transform: scale(1.2); /* Slightly enlarge the icon on hover */
 }

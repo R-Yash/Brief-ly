@@ -47,6 +47,7 @@ def parse_article_details(sp):
     return article_details
 
 def summarize_article(summarizer, text):
+    print('summerizing article.....')
     summary = summarizer(text, max_length=100, min_length=30, do_sample=False)
     return " ".join(s['summary_text'].strip() for s in summary)
 

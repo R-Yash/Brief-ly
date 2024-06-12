@@ -7,9 +7,10 @@ import './App.css';
 
 const App = () => {
     const [jsonFiles, setJsonFiles] = useState([]);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/news')
+        axios.get('https://brief-ly.onrender.com/news')
             .then(response => {
                 const filteredData = response.data.filter(file => file.content.trim() !== "");
                 setJsonFiles(filteredData);
@@ -19,9 +20,17 @@ const App = () => {
             });
     }, []);
 
+    useEffect(() => {
+        document.body.classList.toggle('dark-mode', isDarkMode);
+    }, [isDarkMode]);
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(prevMode => !prevMode);
+    };
+
     return (
         <div className="app">
-            <Header />
+            <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
             <main>
                 <div className="card-container">
                     {jsonFiles.map(file => (
