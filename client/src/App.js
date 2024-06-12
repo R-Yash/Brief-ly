@@ -10,7 +10,7 @@ const App = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
-        axios.get('https://brief-ly.onrender.com/news')
+        axios.get('http://localhost:5000/news')
             .then(response => {
                 const filteredData = response.data.filter(file => file.content.trim() !== "");
                 setJsonFiles(filteredData);
