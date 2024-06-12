@@ -113,6 +113,13 @@ def store_in_database(news_data, db_name="news.db"):
             print('URL already exists in the database. Skipping.....')
             continue
     
+    c.execute('''SELECT COUNT(*) FROM news''')
+    row_count = c.fetchone()[0]
+
+    if row_count > 500:
+        c.execute('''DELETE FROM news WHERE id IN (
+                        SELECT id FROM news ORDER BY id ASC LIMIT ?)''', (row_count - 500,))
+    
     conn.commit()
     conn.close()
 

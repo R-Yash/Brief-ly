@@ -8,7 +8,7 @@ CORS(app)
 def get_news_from_db():
     conn = sqlite3.connect('news.db')
     cursor = conn.cursor()
-    cursor.execute("SELECT id, url, title, image, summary FROM news")
+    cursor.execute("SELECT id, url, title, image, summary FROM news ORDER BY id DESC")
     rows = cursor.fetchall()
     conn.close()
     
@@ -27,7 +27,9 @@ def get_news_from_db():
 @app.route('/news', methods=['GET'])
 def news():
     news_list = get_news_from_db()
-    return jsonify(news_list)
+    response = jsonify(news_list)
+    response.headers['Content-Type'] = 'application/json; charset=utf-8'
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
